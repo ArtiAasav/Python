@@ -1,1 +1,1 @@
-#tervist rfeg
+print("tere maailm")
