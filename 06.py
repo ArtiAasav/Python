@@ -6,7 +6,7 @@ import math
 # Redel
 # Matemaatika
 korgus = 4.4
-nurk = 53
+nurk = math.radians(53)
 kaugus = abs(korgus / math.tan(nurk))
 c = math.sqrt((korgus**2)+ (kaugus**2))
 print(kaugus, c)
