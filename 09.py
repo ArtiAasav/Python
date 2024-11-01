@@ -167,26 +167,42 @@ import random
 
 # Paariarvude summa
 
-even_nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 3, 32, 34, 36, 38]
-# Kirjuta programm, mis summeerib paarisarve listis even_nums kuni esimese paaritu arvuni.
-
-sum_even = 0
-for i in even_nums:
-    if i%2 == 0:
-        sum_even+=i
-    else:
-        break
-        
-print("Tsükkel jõudis lõpuni", sum_even)
-
-
+# even_nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 3, 32, 34, 36, 38]
+# # Kirjuta programm, mis summeerib paarisarve listis even_nums kuni esimese paaritu arvuni.
+# # Katkesta tsükkel, kui leitakse paaritu arv, kasutades break.
+# # Kui tsükkel lõpetab ilma paaritut arvu kohtamata, prindi sõnum “Tsükkel jõudis lõpuni” ja näita paarisarvude summat.
+# sum_even = 0
+# for i in even_nums:
+#     if i%2 == 0:
+#         sum_even+=i
+#     else:
+#         break
+# print("Tsükkel jõudis lõpuni", sum_even)
 
 
-# Katkesta tsükkel, kui leitakse paaritu arv, kasutades break.
-# Kui tsükkel lõpetab ilma paaritut arvu kohtamata, prindi sõnum “Tsükkel jõudis lõpuni” ja näita paarisarvude summat.
 # Mitmemõõtmelise massiivi kasutamine for-tsükliga
 # Tutvu elektriautode nimekirjaga, mis sisaldab 10 elektriauto mudelit, nende läbisõidu ulatust ja hinda. Mõista, kuidas andmed on struktureeritud.
 
+ev_data = [
+['vehicle', 'range', 'price'],
+['Tesla Model Y Long Range', '330', '58990'],
+['Volkswagen ID.4 Pro', '260', '39995'],
+['Ford Mustang Mach-E', '300', '42995'],
+['Audi e-tron GT', '238', '102700'],
+['Nissan Leaf', '149', '27400'],
+['BMW iX xDrive50', '324', '83995'],
+['Polestar 2', '265', '45500'],
+['Kia EV6 Long Range', '310', '47795'],
+['Mercedes-Benz EQS 450+', '350', '102310'],
+['Hyundai Kona Electric', '258', '37400']
+]
 
+keskmine_odo= 0
+keskmine_hind= 0
 
-
+for i in ev_data:
+    for j in i:
+        print(f"{j:>30}", end=" ")
+        keskmine_hind+=int(j[2])
+    print()
+print(keskmine_hind)
