@@ -95,20 +95,53 @@ for i in range(11):
 # 7 – 2=
 # 45 * 69=
 
+kysimustearv= 5
+punktid = 0
 tehted = ['+','-','*','/']
-for i in range(11):
-    i = random.randint(1,100)
-    j = random.randint(1,100)
+for i in range(kysimustearv+1):
+    i = random.randint(1,10)
+    j = random.randint(1,10)
     tehe = random.choice(tehted)
     if tehe=="+":
-        print(f"{i} {tehe} {j} = {i+j}")
+        print(f"{i} {tehe} {j} = ")
+        vastus = int(input("Vastus: "))
+        if vastus==i+j:
+            print("Õige")
+            punktid+=1
+        else:
+            print("Vale vastus")
     elif tehe=="-":
-        print(f"{i} {tehe} {j} = {i-j}")
+        print(f"{i} {tehe} {j} = ")
+        vastus = int(input("Vastus: "))
+        if vastus==i-j:
+            print("Õige")
+            punktid+=1
+        else:
+            print("Vale vastus")
     elif tehe=="*":
-        print(f"{i} {tehe} {j} = {i*j}")
+        print(f"{i} {tehe} {j} = ")
+        vastus = int(input("Vastus: "))
+        if vastus==i*j:
+            print("Õige")
+            punktid+=1
+        else:
+            print("Vale vastus")
     else:
-        print(f"{i} {tehe} {j} = {round(i/j,2)}")
+        print(f"{i} {tehe} {j} = ")
+        vastus = float(input("Vastus: "))
+        if vastus=={round(i/j,2)}:
+            print("Õige")
+            punktid+=1
+        else:
+            print("Vale vastus")
 
+try:
+    if kysimustearv/punktid >= 0.5:
+        print(punktid, "A")
+    else:
+        print(punktid, "MA")
+except:
+    print("MA")
 # Täienda eelmist ülesannet ja kasutaja käest küsitakse vastust.
 # Õiged vastused loetakse kokku
 # # Kui saab vähemalt poole punktid, siis saab A, muul juhul MA
