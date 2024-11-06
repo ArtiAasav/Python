@@ -4,7 +4,7 @@ import random
 
 
 
-for i in range(2):
+for i in range(6):
     d = random.randint(10,100)
     c = turtle.pencolor("black")
     #sein
@@ -32,7 +32,10 @@ for i in range(2):
 
     #järgmine maja
     turtle.penup()
-    turtle.goto(d,-0)
+    turtle.fd(d)
+    turtle.lt(90)
+    turtle.fd(d)
+    turtle.lt(90)
     turtle.fd(d+20)
     turtle.pendown()
 
