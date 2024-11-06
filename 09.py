@@ -197,12 +197,16 @@ ev_data = [
 ['Hyundai Kona Electric', '258', '37400']
 ]
 
-keskmine_odo= 0
-keskmine_hind= 0
+keskmineOdo= []
+keskmineHind= []
 
 for i in ev_data:
-    for j in i:
-        print(f"{j:>30}", end=" ")
-        keskmine_hind+=int(j[2])
-    print()
-print(keskmine_hind)
+    if i[0] != "vehicle":
+        keskmineOdo.append(int(i[1]))
+        keskmineHind.append(int(i[2]))
+        #print(i[1])
+    if i[0] != "vehicle" and int(i[1]) > 300:
+        print(i[0])
+
+print(sum(keskmineOdo)/len(keskmineOdo))
+print(sum(keskmineHind)/len(keskmineHind))
