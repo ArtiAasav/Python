@@ -58,11 +58,24 @@ print("Vali kujund: \n1 viisnurk, \n2 ring, \n3 ruut, \n4 suvaline")
 kujund = (int(input("Siseta number: ")))
 arv = (int(input("Mitu kujundit tahad (1-100): ")))
 
-def viisnurk():
-    turtle
+def viisnurk(a):
+    for j in range(a):
+        turtle.speed(0)
+        turtle.penup()
+        turtle.goto(random.randint(-400,400), random.randint(-400,400))
+        turtle.pendown()
+        turtle.lt(random.randint(0,90))
+        for i in range(5):
+            turtle.fd(100)
+            turtle.lt(144)
 
-def ring():
-    turtle.circle(100)
+def ring(a):
+    for j in range(a):
+        turtle.speed(0)
+        turtle.penup()
+        turtle.goto(random.randint(-300,300), random.randint(-300,300))
+        turtle.pendown()
+        turtle.circle(100)
 
 def ruut(a):
     for j in range(a):
@@ -76,16 +89,17 @@ def ruut(a):
             turtle.lt(90)
 
 
-def suvaline():
-    pass
+def suvaline(a):
+    for i in range(a):
+        my_list = [viisnurk, ring, ruut]
+        random.choice(my_list)(1)
 
 if kujund == 1:
-    viisnurk()
+    viisnurk(arv)
 elif kujund == 2:
-    ring()
+    ring(arv)
 elif kujund == 3:
     ruut(arv)
 else:
-    suvaline()
-
+    suvaline(arv)
 
