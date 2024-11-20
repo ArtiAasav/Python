@@ -29,6 +29,11 @@ ring.setheading(random.randint(0, 360))
 ristkyliku_kiirus = 20
 kiirus = 10
  
+# skoor
+skoor = 0
+
+
+
 # ristküliku funktsioonid
 def liigu_vasakule():
     x = ristkylik.xcor()
@@ -48,21 +53,44 @@ def peegelda_porkumisel():
         if uus_nurk < 0:
             uus_nurk += 360
         ring.setheading(uus_nurk)
-    if ring.ycor() >= 300 or ring.ycor() <= -300:
+    if ring.ycor() >= 300:
         uus_nurk = 360 - nurk
         ring.setheading(uus_nurk)
+    if ring.ycor() <= -300:
+        ring.xcor() == 0
+        print("Game over")
+        turtle.bye()
  
 def ring_liigu():
     ring.forward(kiirus)
     peegelda_porkumisel()
     aken.update()
     aken.ontimer(ring_liigu, 20)
+    
+
+    # tuvasta kokkupõrge alusega
+    if ring.ycor() <= -220 and ristkylik.xcor() < ring.xcor()+50 and ristkylik.xcor() > ring.xcor()-50:
+        kokkuporge()
+        nurk = ring.heading()
+        uus_nurk = 360 - nurk
+        ring.setheading(uus_nurk)
+
+def kokkuporge():
+    global skoor
+    global kiirus
+    skoor+=1
+    turtle.goto(-200, 250)
+    turtle.hideturtle()
+    turtle.clear()
+    turtle.write(skoor, font=("Arial", 20, "normal"))
+    kiirus+=2
+    print(f"Skoor: {skoor}")
  
 # klaviatuurile reageerimine
 aken.listen()
 aken.onkeypress(liigu_vasakule, "Left")
 aken.onkeypress(liigu_paremale, "Right")
- 
+
 ring_liigu()
  
 aken.mainloop()
