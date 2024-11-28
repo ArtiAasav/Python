@@ -210,3 +210,4 @@ for i in ev_data:
 
 print(sum(keskmineOdo)/len(keskmineOdo))
 print(sum(keskmineHind)/len(keskmineHind))
+
