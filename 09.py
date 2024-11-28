@@ -183,31 +183,31 @@ import random
 # Mitmemõõtmelise massiivi kasutamine for-tsükliga
 # Tutvu elektriautode nimekirjaga, mis sisaldab 10 elektriauto mudelit, nende läbisõidu ulatust ja hinda. Mõista, kuidas andmed on struktureeritud.
 
-ev_data = [
-['vehicle', 'range', 'price'],
-['Tesla Model Y Long Range', '330', '58990'],
-['Volkswagen ID.4 Pro', '260', '39995'],
-['Ford Mustang Mach-E', '300', '42995'],
-['Audi e-tron GT', '238', '102700'],
-['Nissan Leaf', '149', '27400'],
-['BMW iX xDrive50', '324', '83995'],
-['Polestar 2', '265', '45500'],
-['Kia EV6 Long Range', '310', '47795'],
-['Mercedes-Benz EQS 450+', '350', '102310'],
-['Hyundai Kona Electric', '258', '37400']
-]
+# ev_data = [
+# ['vehicle', 'range', 'price'],
+# ['Tesla Model Y Long Range', '330', '58990'],
+# ['Volkswagen ID.4 Pro', '260', '39995'],
+# ['Ford Mustang Mach-E', '300', '42995'],
+# ['Audi e-tron GT', '238', '102700'],
+# ['Nissan Leaf', '149', '27400'],
+# ['BMW iX xDrive50', '324', '83995'],
+# ['Polestar 2', '265', '45500'],
+# ['Kia EV6 Long Range', '310', '47795'],
+# ['Mercedes-Benz EQS 450+', '350', '102310'],
+# ['Hyundai Kona Electric', '258', '37400']
+# ]
 
-keskmineOdo= []
-keskmineHind= []
+# keskmineOdo= []
+# keskmineHind= []
 
-for i in ev_data:
-    if i[0] != "vehicle":
-        keskmineOdo.append(int(i[1]))
-        keskmineHind.append(int(i[2]))
-        #print(i[1])
-    if i[0] != "vehicle" and int(i[1]) > 300:
-        print(i[0])
+# for i in ev_data:
+#     if i[0] != "vehicle":
+#         keskmineOdo.append(int(i[1]))
+#         keskmineHind.append(int(i[2]))
+#         #print(i[1])
+#     if i[0] != "vehicle" and int(i[1]) > 300:
+#         print(i[0])
 
-print(sum(keskmineOdo)/len(keskmineOdo))
-print(sum(keskmineHind)/len(keskmineHind))
+# print(sum(keskmineOdo)/len(keskmineOdo))
+# print(sum(keskmineHind)/len(keskmineHind))
 

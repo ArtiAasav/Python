@@ -103,3 +103,4 @@ elif kujund == 3:
 else:
     suvaline(arv)
 
+turtle.done()
