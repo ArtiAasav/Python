@@ -1,6 +1,10 @@
 # Arti Aasav
 # 28.11.2024
 # Ülesanne 17
+import os
+
+# Kirjuta Pythoni skript, mis loeb failist palgad.txt töötajate andmed ja genereerib iga töötaja kohta eraldi palgatõendi.
+# Tõendid salvesta kausta, mille nimi on käesolev kuu ja aasta (näiteks 02.2025).
 
 # Kirjuta Pythoni skript, mis loeb failist palgad.txt töötajate andmed ja arvutab eraldi
 # meeste keskmised töötunnid, töötasu ning palk
@@ -13,20 +17,22 @@ mpalgad = []
 npalgad = []
 palk = 500
 
+os.mkdir("palgad")
 for i in read:
     r = i.split(",")
-    print(r[3])
+    failinimi = r[0] + "_" + r[1] + ".txt"
+    file = open("palgad/" + failinimi, 'a')
+    for j in range(1,7):
+        file.write(r[j] + "\n")
     if r[3] == "Mees":
         mpalgad.append(float(r[6]))
     else:
         npalgad.append(float(r[6]))
-print(mpalgad)
+# print(mpalgad)
+# print(npalgad)
 
-
-
-
-
-
+print(sum(mpalgad)/len(mpalgad))
+print(sum(npalgad)/len(npalgad))
 
 
 # Pangatehingud
