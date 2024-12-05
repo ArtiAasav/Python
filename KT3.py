@@ -24,7 +24,9 @@ for rida in fail:
     if float(rida) > 0:
         print(rida,end="")
 
+# 3.4
 
+fail = open(fail.readlines)
 
 
 
