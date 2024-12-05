@@ -16,6 +16,7 @@ with open(faili_nimi, mode='r', encoding='utf-8') as fail:
 print(f"Meeskondade arv: {len(meeskonnad)}")
 for i in meeskonnad:
     print(i)
+    
 
 
 
