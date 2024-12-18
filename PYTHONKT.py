@@ -36,28 +36,43 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]; b = [i for i in a if i < 5]; print(b
 # a on list, b on uus list, kuhu tulevad kõik numbrid mis on väiksemad kui 5
 
 
-# 11
+# 11. Salakeel
+# sinu programm kÃ¼sib kasutajalt, kas ta soovib salakeelt luua vÃµi tÃµlkida - 1p
+# kasutaja sisestab tavalise sÃµna, mis muudetakse salakeeleks - 1p
+# kasutaja sisestab salakeeles sÃµna, mis teisendatakse jÃ¤lle normaalseks - 1p
+# kood kommenteeritud - 1p
 
 # küsib kasutajalt kas ta tahab salakeelt luua või tõlkida
-salakeel_tegemine = int(input("1 = salakeele loomine, 2 salakeele tõlkimine: "))
+salakeel_tegemine = (input("1 = salakeele loomine, 2 = salakeele tõlkimine: "))
 
 # Kui 1 siis loob salakeele
 if salakeel_tegemine == "1":
     # sisesta mis sõna tahad
     Salakeel = input("Sisesta sõna: ").lower()
     # vahetab ära tähed
-    print(Salakeel.replace("a", "^").replace(int("o", "0")).replace(int("i", "1")).replace(int("e", "3")).replace("u", "v"))
-    
+    print(Salakeel.replace("a", "^").replace("o", "0").replace("i", "1").replace("e", "3").replace("u", "v"))
+
     # Kui 2 siis tõlgib salakeele
 elif salakeel_tegemine == "2":
     # sisesta mis sõna tahad
-    Salakeel = int(input("Sisesta sõna: ")).lower()
+    Salakeel = (input("Sisesta sõna: ")).lower()
     # vahetab ära tähed
-    print(Salakeel.replace("^", "a").replace(int("0", "o")).replace(int("1", "i")).replace(int("3", "e")).replace("v", "u"))
-else:
+    print(Salakeel.replace("^", "a").replace("0", "o").replace("1", "i").replace("3", "e").replace("v", "u"))
+
     #kui kasutaja valib midagi muud siis prindib et valik on vale
+else:
     print("Vale valik!")
 
+# 9. Emaili kontroll
+# kasutaja lisab emaili kujul enimi.pnimi@server.com - 1p
+# programm kontrollib kas email on sisestatud Ãµigesti - vÃ¤hemalt @-mÃ¤rgi kontroll - 1p
+# programm tÃ¼keldab selle ja vÃ¤ljastab lause: â€˜Tere enimi, sinu email on server serveris ja domeeniks on sul comâ€™ - 1p
+# kasutajalt kÃ¼situd kÃ¼simused on selgelt Ã¼heselt mÃµistetavad - 1p
+# kood kommenteeritud - 1p
+
+email = input("Sisesta email kujul enimi.pnimi@server.com: ")
+if "@" in email:
+    print("Tere, " + str(email.split("@")[0].split(".")[0].capitalize()) +","+" sinu email on server serveris ja domeeniks on sul com")
 
 
 
