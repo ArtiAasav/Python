@@ -32,7 +32,12 @@ import itertools
 # Write this in one line of Python.
 # Ask the user for a number and return a list that contains only elements from the original list a that are smaller than that number given by the user.
 
-chain(a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], b = [], (for i in (a)):,     if i < 5:,         b.append(a[i]) , print(b))
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], b = [i for i in a if i < 5]
+b = []
+for i in (a):
+    if i < 5: 
+        b.append(a[i])
+print(b)
 
 
 
