@@ -4,19 +4,33 @@
 
 import csv
 
-meeskonnad = []
+meeskonnad = {}
 faili_nimi = 'EstonianBasketballGames.csv'
 with open(faili_nimi, mode='r', encoding='utf-8') as fail:
-    csv_lugeja = csv.reader(fail)
+    csv_lugeja = csv.DictReader(fail)
     for rida in csv_lugeja:
-        #print(rida[1], rida[2]):
-        if rida[1] not in meeskonnad and rida[1] != 'Team 1':
-            meeskonnad.append(rida[1])
+        mk = rida["Team 1"]
+        mk2 = rida["Team 2"]
+        #Tekitan nimekirja
+        if mk not in meeskonnad:
+            meeskonnad[mk] = 0
+        if mk2 not in meeskonnad:
+            meeskonnad[mk2] = 0
+        #Lisan mitu korda mängis
+        if mk in meeskonnad:
+            meeskonnad[mk] += 1
+        if mk2 in meeskonnad:
+            meeskonnad[mk2] += 1
+#Mitu meeskonda osales
+print(f"Osales {len(meeskonnad)} meeskonda")
 
-print(f"Meeskondade arv: {len(meeskonnad)}")
-for i in meeskonnad:
-    print(i)
-    
+#Salvestan Excel CSVsse
+faili_nimi = 'meeskonnad.csv'
+
+with open(faili_nimi, 'w', encoding='utf-8') as csv_file:  
+    writer = csv.writer(csv_file, delimiter=';', lineterminator='\n')
+    for key, value in meeskonnad.items():
+        writer.writerow([key, value])
 
 
 
