@@ -1,3 +1,7 @@
+# Arti Aasav
+# 08.01.2025
+# Ülesanne 20
+
 import requests
 
 # API võtme ja linna nime määramine
