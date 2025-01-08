@@ -20,14 +20,14 @@ for tulemused in haridus_tulemused:
         klass12 += 1
         # hinneteleht
         for k, v in hinded.items():
-            print(k, v)
+            print(f"{k}: {v}", sep=",")
         #12. klassi õpilaste trennid
         trenn = ""
         for i in trennid:
             trenn += i
             trenn += ", "
         # Prindib õpilaste nimed ja trennid, kes õpivad 12. klassis
-        print(f"{nimi}: {trenn}, {hinded}")
+        print(f"{nimi}: {trenn}")
 
     if klass == "11":
         klass11 += 1
