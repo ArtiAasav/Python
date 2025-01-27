@@ -1,13 +1,13 @@
 # brandid = input("Mida otsid?: ")
 import requests
 
-url = "https://dummyjson.com/products"
+url = "https://dummy-json.mock.beeceptor.com/posts"
 response = requests.get(url)
 if response.status_code == 200:
     data = response.json()
-    for brandid in "products":
-        brandid = data["products"]
-        print(brandid)
+    for title in "products":
+        title = data["products"]["title"]
+        print(title)
 else:
     print("Viga")
 
